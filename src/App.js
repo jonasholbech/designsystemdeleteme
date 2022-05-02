@@ -2,6 +2,7 @@ import "./App.css";
 import { Button } from "antd";
 import { Collapse } from "antd";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const { Panel } = Collapse;
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 `;
   return (
     <div className="App">
+      <Link to="/">Home</Link> | <Link to="/about">About</Link>
       <Collapse defaultActiveKey={["1"]} accordion>
         <Panel header="This is panel header 1" key="1">
           <p>{text}</p>
