@@ -13,7 +13,8 @@ function App() {
 `;
   return (
     <div className="App">
-      <Link to="/">Home</Link> | <Link to="/about">About</Link>
+      <Link to="/">Home</Link> | <Link to="/about">About</Link> |{" "}
+      <Link to="/projects">Projects</Link>
       <Collapse defaultActiveKey={["1"]} accordion>
         <Panel header="This is panel header 1" key="1">
           <p>{text}</p>
