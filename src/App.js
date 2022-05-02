@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Button } from "antd";
+import { Collapse } from "antd";
+
+const { Panel } = Collapse;
 
 function App() {
+  const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Collapse defaultActiveKey={["1"]} accordion>
+        <Panel header="This is panel header 1" key="1">
+          <p>{text}</p>
+        </Panel>
+        <Panel header="This is panel header 2" key="2">
+          <p>{text}</p>
+          <Button type="primary" danger>
+            DELETE EVERYTHING
+          </Button>
+        </Panel>
+        <Panel header="This is panel header 3" key="3">
+          <p>{text}</p>
+        </Panel>
+      </Collapse>
     </div>
   );
 }
